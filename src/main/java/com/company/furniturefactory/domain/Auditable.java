@@ -5,18 +5,16 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Auditable {
-    Long updatedBy;
-    Long createdBy;
-    Long deletedBy;
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
-    LocalDateTime deletedAt;
-    boolean deleted;
+   private Long updatedBy;
+   private Long createdBy;
+   private Long deletedBy;
+   private LocalDateTime createdAt;
+   private LocalDateTime updatedAt;
+   private LocalDateTime deletedAt;
+   private boolean deleted;
 }

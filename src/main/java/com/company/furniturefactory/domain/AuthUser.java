@@ -1,13 +1,14 @@
 package com.company.furniturefactory.domain;
 
 import com.company.furniturefactory.enums.Role;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
+@Getter
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class AuthUser {
     Long id;
