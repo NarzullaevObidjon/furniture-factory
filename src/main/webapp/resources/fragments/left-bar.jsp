@@ -19,10 +19,10 @@
                 <a id="user-bar" class="nav-link" href="/user/all">Foydalanuvchilar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/user/clients">Xaridorlar</a>
+                <a id="client-bar" class="nav-link" href="/client/all">Xaridorlar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/user/suppliers">Taminotchilar</a>
+                <a id="supplier-bar" class="nav-link" href="/supplier/all">Taminotchilar</a>
             </li>
         </ul>
     </div>
