@@ -16,7 +16,7 @@
                 <a id="measurement-bar" class="nav-link" href="/measurement/all">O'lchov birliklari</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/user/all">Foydalanuvchilar</a>
+                <a id="user-bar" class="nav-link" href="/user/all">Foydalanuvchilar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/clients">Xaridorlar</a>

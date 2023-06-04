@@ -8,10 +8,11 @@ import lombok.*;
 @Setter
 @Getter
 public class UserResponse {
-    private String id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String role;
     private String phone;
-    private String ImageUrl;
+    private Long ImageId;
+    private String ImagePath;
 }

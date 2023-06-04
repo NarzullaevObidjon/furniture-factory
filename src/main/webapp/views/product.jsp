@@ -105,7 +105,7 @@
 
               <form:form id="update-form" action="/product/update" method="post" modelAttribute="productIdDto" enctype="multipart/form-data">
                 <div class="mb-3">
-                  <label for="name-uz-add" class="form-label">Nomi(Uz)</label>
+                  <label for="name-uz-up" class="form-label">Nomi(Uz)</label>
                   <form:input type="text" class="form-control" id="name-uz-up" path="nameUz" placeholder="Nomi(Uz)" />
                 </div>
                 <div class="mb-3">
