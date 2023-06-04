@@ -68,7 +68,7 @@ public class MaterialDAO {
     }
 
     public Long getImageId(Long materialId) {
-       return jdbcTemplate.queryForObject("select image_id from main_user.material where id = ?",Long.class,materialId);
+       return jdbcTemplate.queryForObject("select image_id from main_user.material where id = ? and deleted = 0" ,Long.class,materialId);
     }
 
     public void update(Material material) {

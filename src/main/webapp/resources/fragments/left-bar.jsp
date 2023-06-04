@@ -4,7 +4,7 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column h-100">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/product">Maxsulotlar</a>
+                <a id="product-bar" class="nav-link" aria-current="page" href="/product/all">Maxsulotlar</a>
             </li>
             <li class="nav-item" >
                 <a id="category-bar" class="nav-link " href="/category/all">Maxsulotlar turlari</a>
