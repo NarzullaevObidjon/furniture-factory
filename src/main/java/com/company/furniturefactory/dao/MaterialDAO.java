@@ -4,9 +4,11 @@ import com.company.furniturefactory.config.security.SessionUser;
 import com.company.furniturefactory.domain.Material;
 import com.company.furniturefactory.dto.material.MaterialResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -42,8 +44,10 @@ public class MaterialDAO {
                     materialResponse.setMeasurementId(rs.getLong("measurement_id"));
                     materialResponse.setImageId(rs.getLong("image_id"));
                     String imagePath = rs.getString("image_path");
-                    imagePath = "../" + imagePath.substring(imagePath.indexOf("resources")); //vaqtincha
-                    imagePath = imagePath.replace("\\", "/");  //vaqtincha
+                    if(imagePath!=null){
+                        imagePath = "../" + imagePath.substring(imagePath.indexOf("resources")); //vaqtincha
+                        imagePath = imagePath.replace("\\", "/");  //vaqtincha
+                    }
                     materialResponse.setImagePath(imagePath);
                     materialResponse.setMeasurementName(rs.getString("measurement_name"));
                     return materialResponse;
@@ -61,5 +65,19 @@ public class MaterialDAO {
                 material.getImageId(),
                 sessionUser.getId()
         );
+    }
+
+    public Long getImageId(Long materialId) {
+       return jdbcTemplate.queryForObject("select image_id from main_user.material where id = ?",Long.class,materialId);
+    }
+
+    public void update(Material material) {
+        String sql = "UPDATE main_user.material SET code = ?, norma = ?, name_uz = ?, name_ru = ?, measurement_id = ?, image_id = ? WHERE id = ?";
+        jdbcTemplate.update(sql, material.getCode(), material.getNorma(), material.getNameUz(), material.getNameRu(), material.getMeasurementId(), material.getImageId(), material.getId());
+    }
+
+    public void delete(Long id) {
+        String sql = "UPDATE main_user.material SET deleted=1, deleted_by=?, deleted_at=? WHERE id=?";
+        jdbcTemplate.update(sql, sessionUser.getId(), LocalDateTime.now(), id);
     }
 }

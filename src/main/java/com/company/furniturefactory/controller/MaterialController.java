@@ -46,4 +46,17 @@ public class MaterialController {
         materialService.add(dto);
         return new ModelAndView("redirect:/material/all");
     }
+
+    @PostMapping("/update")
+    public ModelAndView update(
+            @Valid @ModelAttribute(value = "materialCreateIdDto") MaterialCreateIdDTO dto ,BindingResult bindingResult) {
+        materialService.update(dto);
+        return new ModelAndView("redirect:/material/all");
+    }
+
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable Long id){
+        materialService.delete(id);
+        return new ModelAndView("redirect:/material/all");
+    }
 }

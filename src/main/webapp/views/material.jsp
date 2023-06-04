@@ -97,7 +97,7 @@
               >
                 <i class="bi bi-pencil-square"></i>
               </button>
-              <a class="btn btn-danger"  href="/materials/delete/${material.id}">
+              <a class="btn btn-danger"  href="/material/delete/${material.id}">
                 <i class="bi bi-trash"></i>
               </a>
             </td>

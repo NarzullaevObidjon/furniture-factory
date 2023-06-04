@@ -3,6 +3,7 @@ package com.company.furniturefactory.service;
 import com.company.furniturefactory.dao.MaterialDAO;
 import com.company.furniturefactory.domain.Material;
 import com.company.furniturefactory.dto.material.MaterialCreateDTO;
+import com.company.furniturefactory.dto.material.MaterialCreateIdDTO;
 import com.company.furniturefactory.dto.material.MaterialResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class MaterialService {
     public void add(MaterialCreateDTO dto) {
 
         Long imageId = null;
-        if (dto.getImage()!=null) {
+        if (!dto.getImage().isEmpty()) {
             imageId = imageService.loadImage(dto.getImage());
         }
 
@@ -36,5 +37,28 @@ public class MaterialService {
                         .imageId(imageId)
                         .build()
         );
+    }
+
+    public void update(MaterialCreateIdDTO dto) {
+        Material material = Material.childBuilder()
+                .id(dto.getId())
+                .code(dto.getCode())
+                .norma(dto.getNorma())
+                .nameUz(dto.getNameUz())
+                .nameRu(dto.getNameRu())
+                .measurementId(dto.getMeasurementId())
+                .build();
+        Long imageId;
+        if (!dto.getImage().isEmpty()) {
+            imageId = imageService.loadImage(dto.getImage());
+        }else {
+            imageId = materialDAO.getImageId(material.getId());
+        }
+        material.setImageId(imageId);
+        materialDAO.update(material);
+    }
+
+    public void delete(Long id) {
+        materialDAO.delete(id);
     }
 }
