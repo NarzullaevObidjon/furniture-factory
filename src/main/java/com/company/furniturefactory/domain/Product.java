@@ -18,7 +18,8 @@ public class Product extends Auditable{
     Long imageId;
 
     @Builder(builderMethodName = "childBuilder")
-    public Product(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String code, String norma, String nameUz, String nameRu, Long categoryId, Long measurementId, Long imageId) {
+
+    public Product(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String nameUz, String nameRu, Long categoryId, Long imageId) {
         super(updatedBy, createdBy, deletedBy, createdAt, updatedAt, deletedAt, deleted);
         this.id = id;
         this.nameUz = nameUz;

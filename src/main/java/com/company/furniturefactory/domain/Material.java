@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 public class Material extends Auditable{
     Long id;
     String code;
-    String norma;
+    Integer norma;
     String nameUz;
     String nameRu;
     Long measurementId;
     Long imageId;
 
     @Builder(builderMethodName = "childBuilder")
-    public Material(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String code, String norma, String nameUz, String nameRu, Long categoryId, Long measurementId, Long imageId) {
+    public Material(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String code, Integer norma, String nameUz, String nameRu, Long measurementId, Long imageId) {
         super(updatedBy, createdBy, deletedBy, createdAt, updatedAt, deletedAt, deleted);
         this.id = id;
         this.code = code;

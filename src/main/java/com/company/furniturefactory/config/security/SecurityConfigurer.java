@@ -24,7 +24,8 @@ public class SecurityConfigurer {
             "/views/**",
             "/resources/**",
             "/fragments/**",
-            "/error"
+            "/error",
+            "**"
     };
     private final CustomUserDetailsService userDetailsService;
     private final CustomAuthenticationFailureHandler authenticationFailureHandler;

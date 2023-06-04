@@ -1,7 +1,7 @@
 package com.company.furniturefactory.config.security;
 
 
-import com.company.furniturefactory.dao.AuthUserDao;
+import com.company.furniturefactory.dao.AuthUserDAO;
 import com.company.furniturefactory.domain.AuthUser;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final AuthUserDao authUserDao;
+    private final AuthUserDAO authUserDao;
 
-    public CustomUserDetailsService(AuthUserDao authUserDao) {
+    public CustomUserDetailsService(AuthUserDAO authUserDao) {
         this.authUserDao = authUserDao;
     }
 

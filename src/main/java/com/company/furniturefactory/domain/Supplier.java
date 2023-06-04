@@ -16,10 +16,11 @@ public class Supplier extends Auditable{
     String phone;
 
     @Builder(builderMethodName = "childBuilder")
-    public Supplier(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long authUserId, String firstName, String lastName, String phone) {
+
+    public Supplier(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String name, String phone) {
         super(updatedBy, createdBy, deletedBy, createdAt, updatedAt, deletedAt, deleted);
-        this.name = name;
         this.id = id;
+        this.name = name;
         this.phone = phone;
     }
 }

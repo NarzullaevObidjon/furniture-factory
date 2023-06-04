@@ -20,6 +20,7 @@ public class Image extends Auditable{
     Long size;
 
     @Builder(builderMethodName = "childBuilder")
+
     public Image(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String generatedFileName, String originalFileName, String filePath, String mimeType, String extension, Long size) {
         super(updatedBy, createdBy, deletedBy, createdAt, updatedAt, deletedAt, deleted);
         this.id = id;

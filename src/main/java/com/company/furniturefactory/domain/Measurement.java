@@ -16,10 +16,11 @@ public class Measurement extends Auditable{
     String nameRu;
 
     @Builder(builderMethodName = "childBuilder")
-    public Measurement(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long authUserId, String firstName, String lastName, String phone) {
+
+    public Measurement(Long updatedBy, Long createdBy, Long deletedBy, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt, boolean deleted, Long id, String nameUz, String nameRu) {
         super(updatedBy, createdBy, deletedBy, createdAt, updatedAt, deletedAt, deleted);
-        this.nameUz = nameUz;
         this.id = id;
+        this.nameUz = nameUz;
         this.nameRu = nameRu;
     }
 }
