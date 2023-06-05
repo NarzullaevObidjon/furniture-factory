@@ -18,7 +18,7 @@
                         <li><a class="dropdown-item" href="#">Dashboard</a></li>
                         <li><a class="dropdown-item" href="#">Mijozlar</a></li>
                         <li><a class="dropdown-item" href="#">Ta'minotchilar</a></li>
-                        <li><a class="dropdown-item" href="/warehouse/materials">Xomashyo ombori</a></li>
+                        <li><a class="dropdown-item" href="/material-in/all">Xomashyo ombori</a></li>
                         <li><a class="dropdown-item" href="#">Maxsulot ombori</a></li>
                         <li><a class="dropdown-item" href="#">Hisobot</a></li>
                     </ul>
